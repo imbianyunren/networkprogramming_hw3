@@ -13,7 +13,9 @@
 4. 如果那個封包是TCP或UDP封包，則再多顯示來源port號碼與目的port號碼
 
 ## 執行方式
+```c
 sudo ./read_pcap sample.pcap
+```
 
 因獲取網路device需要權限
 
