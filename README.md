@@ -14,6 +14,7 @@
 
 ## 執行方式
 sudo ./read_pcap sample.pcap
+
 因獲取網路device需要權限
 
 ## 執行結果圖
