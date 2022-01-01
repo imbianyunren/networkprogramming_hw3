@@ -4,13 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <arpa/inet.h>
-// struct N
-// {
-//     int num;
-//     char ip[200];
-// } cnt[1000];
 
-// int t = 0;
 void ethernet_protocol_callback(unsigned char *argument, const struct pcap_pkthdr *pac_hdr, const unsigned char *packet)
 {
     int *id = (int *)argument;
@@ -69,7 +63,6 @@ void ethernet_protocol_callback(unsigned char *argument, const struct pcap_pkthd
 }
 int main(int argc, char **argv)
 {
-    // system("sudo");
     if (argc > 1)
     {
         char filename[1000];
