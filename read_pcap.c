@@ -31,6 +31,10 @@ void ethernet_protocol_callback(unsigned char *argument, const struct pcap_pkthd
     }
     printf("Ethernet type is ");
     printf("%02x%02x\n",packet[12],packet[13]);
+    if(packet[12]== 5 && packet[13]== 9 ){ //0x59
+        printf("The network layer is ospf protocol\n");
+    }
+    
     if (packet[12] == 8 && packet[13] == 0) //IP= 0x0800
     {
         printf("The network layer is IP protocol\n");
@@ -57,6 +61,8 @@ void ethernet_protocol_callback(unsigned char *argument, const struct pcap_pkthd
         if(packet[23]==6 || packet[23]==17){
             printf("Source port %d\n",packet[34]*256+packet[35]);
             printf("Destination port %d\n",packet[36]*256+packet[37]);
+        }else{
+            printf("others, not TCP & UDP\n");
         }
     }
     printf("\n\n");
